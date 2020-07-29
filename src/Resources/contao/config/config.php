@@ -1,3 +1,3 @@
 <?php
 
-$GLOBALS['FE_MOD']['cp']['profileList'] = 'Kreadiv\ContaoProfilesBundle\Module\ProfileListModule';
+$GLOBALS['FE_MOD']['cp']['profileListing'] = 'Kreadiv\ContaoProfilesBundle\Module\ProfileListingModule';
