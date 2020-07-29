@@ -1,0 +1,28 @@
+{
+    "name": "kreadiv/contao-profiles-bundle",
+    "description": "Create a list of profiles and output them as a list or individual profile.",
+    "homepage": "https://www.wenzel-webdesign.de",
+    "license": "LGPL-3.0-or-later",
+    "type": "contao-bundle",
+    "require": {
+        "php": ">=7.1",
+        "contao/core-bundle": "~4.9"
+    },
+    "extra": {
+        "contao-manager-plugin": "Kreadiv\\ContaoProfileBundle\\ContaoManager\\Plugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kreadiv\\ContaoProfileBundle\\": "src/"
+        },
+        "classmap": [
+            "src/Resources/contao/"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/",
+            "src/Resources/contao/templates/"
+        ]
+    }
+}
