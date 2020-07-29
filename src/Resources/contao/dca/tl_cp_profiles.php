@@ -23,6 +23,10 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
             'panelLayout'        => 'filter;sort,search,limit',
             'headerFields'       => ['title', 'jumpTo', 'tstamp']
         ],
+        'label' => [
+            'fields' => ['first_name', 'last_name'],
+            'format' => '%s %s',
+        ],
         'operations' => [
             'edit' => [
                 'href'           => 'act=edit',
