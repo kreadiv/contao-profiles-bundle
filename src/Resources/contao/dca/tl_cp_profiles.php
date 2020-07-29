@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Palettes
- */
 $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
 
     // Config
