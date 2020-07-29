@@ -9,11 +9,11 @@
         "contao/core-bundle": "~4.9"
     },
     "extra": {
-        "contao-manager-plugin": "Kreadiv\\ContaoProfileBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Kreadiv\\ContaoProfilesBundle\\ContaoManager\\Plugin"
     },
     "autoload": {
         "psr-4": {
-            "Kreadiv\\ContaoProfileBundle\\": "src/"
+            "Kreadiv\\ContaoProfilesBundle\\": "src/"
         },
         "classmap": [
             "src/Resources/contao/"
