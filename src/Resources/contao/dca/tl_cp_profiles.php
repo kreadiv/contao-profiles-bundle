@@ -47,7 +47,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
 
     // Palettes
     'palettes' => [
-        'default'                => '{profile_legend},first_name,last_name,active'
+        'default'                => '{profile_legend},first_name,last_name,email,active'
     ],
 
     // Fields
@@ -74,6 +74,15 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
             'flag'               => 1,
             'inputType'          => 'text',
             'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
+            'sql'                => "varchar(255) NOT NULL default ''"
+        ],
+        'email' => [
+            'exclude'            => true,
+            'search'             => true,
+            'sorting'            => true,
+            'flag'               => 1,
+            'inputType'          => 'text',
+            'eval'               => ['mandatory' => true, 'rgxp' => 'email', 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
             'sql'                => "varchar(255) NOT NULL default ''"
         ]
     ]
