@@ -46,5 +46,38 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
                 'icon'           => 'show.svg'
             ]
         ]
+    ],
+
+    // Palettes
+    'palettes' => [
+        'default'                => '{profile_legend},first_name,last_name,active'
+    ],
+
+    // Fields
+    'fields' => [
+        'id' => [
+            'sql'                => "int(10) unsigned NOT NULL auto_increment"            
+        ],
+        'tstamp' => [
+            'sql'                => "int(10) unsigned NOT NULL default 0"
+        ],
+        'first_name' => [
+            'exclude'            => true,
+            'search'             => true,
+            'sorting'            => true,
+            'flag'               => 1,
+            'inputType'          => 'text',
+            'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
+            'sql'                => "varchar(255) NOT NULL default ''"
+        ],
+        'last_name' => [
+            'exclude'            => true,
+            'search'             => true,
+            'sorting'            => true,
+            'flag'               => 1,
+            'inputType'          => 'text',
+            'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
+            'sql'                => "varchar(255) NOT NULL default ''"
+        ]
     ]
 ];
