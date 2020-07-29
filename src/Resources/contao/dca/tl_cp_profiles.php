@@ -10,8 +10,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
             'keys' => [
                 'id'     => 'primary',
                 'email'  => 'unique',
-                'email'  => 'index',
-                'active' => 'index'
+                'email'  => 'index'
             ]
         ]
     ],
@@ -47,7 +46,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
 
     // Palettes
     'palettes' => [
-        'default'                => '{profile_legend},first_name,last_name,email,active'
+        'default'                => '{profile_legend},first_name,last_name,email'
     ],
 
     // Fields
