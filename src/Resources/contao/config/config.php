@@ -7,7 +7,7 @@ $GLOBALS['TL_MODELS']['tl_cp_profiles'] = 'Kreadiv\ContaoProfilesBundle\Model\Pr
 
 // Backend modules
 array_insert($GLOBALS['BE_MOD'], 1, [
-    'cp' => [
+    'content' => [
         'cp_profiles' => [
             'tables' => ['tl_cp_profiles']
         ]
