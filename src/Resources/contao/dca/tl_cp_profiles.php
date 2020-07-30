@@ -8,9 +8,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
         'enableVersioning'               => true,
         'sql' => [
             'keys' => [
-                'id'     => 'primary',
-                'email'  => 'unique',
-                'email'  => 'index'
+                'id'     => 'primary'
             ]
         ]
     ],
@@ -20,8 +18,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
         'sorting' => [
             'mode'               => 4,
             'fields'             => ['first_name', 'last_name'],
-            'panelLayout'        => 'filter;sort,search,limit',
-            'headerFields'       => ['title', 'jumpTo', 'tstamp']
+            'panelLayout'        => 'filter;sort,search,limit'
         ],
         'label' => [
             'fields' => ['first_name', 'last_name'],
