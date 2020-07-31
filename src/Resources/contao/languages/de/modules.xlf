@@ -2,8 +2,8 @@
 <xliff version="1.2">
     <file>
         <body>
-            <trans-unit id="FMD.cp_profiles.0">
-                <target>Profilliste</target>
+            <trans-unit id="MOD.cp_profiles.0">
+                <target>Profile</target>
             </trans-unit>
         </body>
     </file>
