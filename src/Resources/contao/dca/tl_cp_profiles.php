@@ -24,6 +24,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
         'label' => [
             'fields' => ['last_name', 'first_name'],
             'format' => '%s %',
+            'showColumns' => true
         ],
         'operations' => [
             'edit' => [
@@ -48,7 +49,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
 
     // Palettes
     'palettes' => [
-        'default'                => '{profile_legend},first_name,last_name,department,email,phone,profile'
+        'default'                => '{profile_legend},last_name,first_name,department,email,phone,profile'
     ],
 
     // Fields
@@ -63,14 +64,14 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['first_name'],
             'exclude'            => true,
             'inputType'          => 'text',
-            'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
-            'sql'                => "varchar(255) NOT NULL default ''"
+            'eval'               => ['mandatory' => true, 'rgxp' => 'alpha', 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
+            'sql'                => ['type' => 'string', 'length' => 255, 'notnull' => true, 'default' => '']
         ],
         'last_name' => [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['last_name'],
             'exclude'            => true,
             'inputType'          => 'text',
-            'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
+            'eval'               => ['mandatory' => true, 'rgxp' => 'alpha', 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
             'sql'                => "varchar(255) NOT NULL default ''"
         ],
         'department' => [
@@ -100,6 +101,13 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
             'inputType'          => 'textarea',
             'eval'               => ['mandatory' => false, 'rte' => 'tinyMCE', 'decodeEntities' => true, 'tl_class' => 'clr', 'allowHtml' => true],
             'sql'                => "text NULL"
+        ],
+        'profile_image' => [
+            'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['profile_image'],
+            'exclude'            => true,
+            'inputType'          => 'fileTree',
+            'eval'               => ['mandatory' => false, 'tl_class' => 'clr', 'files' => true, 'fieldType' => 'radio', 'extensions' => \Contao\Config::get('validImageTypes')]],
+            'sql'                => "blob NULL"
         ]
     ]
 ];
