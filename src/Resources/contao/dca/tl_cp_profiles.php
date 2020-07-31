@@ -49,7 +49,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
 
     // Palettes
     'palettes' => [
-        'default'                => '{profile_legend},last_name,first_name,department,email,phone,profile'
+        'default'                => '{profile_legend},last_name,first_name,department,profile_image,email,phone,profile'
     ],
 
     // Fields
@@ -64,28 +64,28 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['first_name'],
             'exclude'            => true,
             'inputType'          => 'text',
-            'eval'               => ['mandatory' => true, 'rgxp' => 'alpha', 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
+            'eval'               => ['mandatory' => true, 'rgxp' => 'alpha', 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50 clr'],
             'sql'                => ['type' => 'string', 'length' => 255, 'notnull' => true, 'default' => '']
         ],
         'last_name' => [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['last_name'],
             'exclude'            => true,
             'inputType'          => 'text',
-            'eval'               => ['mandatory' => true, 'rgxp' => 'alpha', 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
+            'eval'               => ['mandatory' => true, 'rgxp' => 'alpha', 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50 clr'],
             'sql'                => "varchar(255) NOT NULL default ''"
         ],
         'department' => [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['department'],
             'exclude'            => true,
             'inputType'          => 'text',
-            'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
+            'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50 clr'],
             'sql'                => "varchar(255) NOT NULL default ''"
         ],
         'email' => [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['email'],
             'exclude'            => true,
             'inputType'          => 'text',
-            'eval'               => ['mandatory' => true, 'rgxp' => 'email', 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
+            'eval'               => ['mandatory' => true, 'rgxp' => 'email', 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50 clr'],
             'sql'                => "varchar(255) NOT NULL default ''"
         ],
         'phone' => [
@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['profile_image'],
             'exclude'            => true,
             'inputType'          => 'fileTree',
-            'eval'               => ['mandatory' => false, 'tl_class' => 'clr', 'files' => true, 'fieldType' => 'radio', 'extensions' => \Contao\Config::get('validImageTypes')],
+            'eval'               => ['mandatory' => false, 'tl_class' => 'flr', 'files' => true, 'fieldType' => 'radio', 'extensions' => \Contao\Config::get('validImageTypes')],
             'sql'                => "blob NULL"
         ]
     ]
