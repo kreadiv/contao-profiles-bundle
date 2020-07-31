@@ -16,13 +16,14 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
     // List
     'list' => [
         'sorting' => [
-            'mode'               => 4,
-            'fields'             => ['first_name', 'last_name'],
-            'panelLayout'        => 'filter;sort,search,limit'
+            'mode' => 1,
+            'fields' => ['title'],
+            'flag' => 1,
+            'panelLayout' => 'search,limit'
         ],
         'label' => [
             'fields' => ['first_name', 'last_name'],
-            'format' => '%s %s',
+            'format' => '%s %',
         ],
         'operations' => [
             'edit' => [
@@ -47,23 +48,20 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
 
     // Palettes
     'palettes' => [
-        'default'                => '{profile_legend},first_name,last_name,email'
+        'default'                => '{profile_legend},first_name,last_name,department,email,phone,profile'
     ],
 
     // Fields
     'fields' => [
         'id' => [
-            'sql'                => "int(10) unsigned NOT NULL auto_increment"            
+            'sql'                => ['type' => 'integer', 'unsigned' => true, 'autoincrement' => true]            
         ],
         'tstamp' => [
-            'sql'                => "int(10) unsigned NOT NULL default 0"
+            'sql'                => ['type' => 'integer', 'unsigned' => true, 'default' => 0]
         ],
         'first_name' => [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['first_name'],
             'exclude'            => true,
-            'search'             => true,
-            'sorting'            => true,
-            'flag'               => 1,
             'inputType'          => 'text',
             'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
             'sql'                => "varchar(255) NOT NULL default ''"
@@ -71,9 +69,6 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
         'last_name' => [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['last_name'],
             'exclude'            => true,
-            'search'             => true,
-            'sorting'            => true,
-            'flag'               => 1,
             'inputType'          => 'text',
             'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
             'sql'                => "varchar(255) NOT NULL default ''"
@@ -81,9 +76,6 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
         'department' => [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['department'],
             'exclude'            => true,
-            'search'             => true,
-            'sorting'            => true,
-            'flag'               => 1,
             'inputType'          => 'text',
             'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
             'sql'                => "varchar(255) NOT NULL default ''"
@@ -91,9 +83,6 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
         'email' => [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['email'],
             'exclude'            => true,
-            'search'             => true,
-            'sorting'            => true,
-            'flag'               => 1,
             'inputType'          => 'text',
             'eval'               => ['mandatory' => true, 'rgxp' => 'email', 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
             'sql'                => "varchar(255) NOT NULL default ''"
@@ -101,9 +90,6 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
         'phone' => [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['phone'],
             'exclude'            => true,
-            'search'             => true,
-            'sorting'            => true,
-            'flag'               => 1,
             'inputType'          => 'text',
             'eval'               => ['mandatory' => true, 'rgxp' => 'phone', 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50'],
             'sql'                => "varchar(255) NOT NULL default ''"
