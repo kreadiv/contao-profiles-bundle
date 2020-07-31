@@ -106,7 +106,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['profile_image'],
             'exclude'            => true,
             'inputType'          => 'fileTree',
-            'eval'               => ['mandatory' => false, 'tl_class' => 'flr', 'files' => true, 'fieldType' => 'radio', 'extensions' => \Contao\Config::get('validImageTypes')],
+            'eval'               => ['mandatory' => false, 'tl_class' => 'flr clr', 'files' => true, 'fieldType' => 'radio', 'extensions' => \Contao\Config::get('validImageTypes')],
             'sql'                => "blob NULL"
         ]
     ]

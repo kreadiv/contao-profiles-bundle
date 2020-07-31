@@ -3,7 +3,8 @@
     <file>
         <body>
             <trans-unit id="MOD.cp_profiles">
-                <target>Profile</target>
+                <source>Profile</source>
+                <target>Steckbriefe</target>
             </trans-unit>
         </body>
     </file>
