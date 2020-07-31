@@ -17,12 +17,12 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
     'list' => [
         'sorting' => [
             'mode' => 1,
-            'fields' => ['title'],
+            'fields' => ['last_name'],
             'flag' => 1,
             'panelLayout' => 'search,limit'
         ],
         'label' => [
-            'fields' => ['first_name', 'last_name'],
+            'fields' => ['last_name', 'first_name'],
             'format' => '%s %',
         ],
         'operations' => [
