@@ -2,7 +2,10 @@
 <xliff version="1.1">
     <file>
         <body>
-
+            <trans-unit id="MOD.cp_profileReader.0">
+                <source>Profile reader</source>
+                <target>Profilleser</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

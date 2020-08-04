@@ -2,21 +2,28 @@
 <xliff version="1.1">
     <file>
         <body>
-            <trans-unit id="tl_content.cp_profileReader.0">
+            <trans-unit id="tl_content.cp_profileReaderLegend">
                 <source>Profile reader</source>
                 <target>Profilleser</target>
             </trans-unit>
-            <trans-unit id="tl_content.cp_profile.0">
-                <source>Profile</source>
-                <target>Profile</target>
+            <trans-unit id="tl_content.cp_profileListLegend">
+                <source>Profile list</source>
+                <target>Profilliste</target>
             </trans-unit>
-            <trans-unit id="tl_content.cp_profileLegend.0">
+            <trans-unit id="tl_content.cp_profile.0">
                 <source>Profile</source>
                 <target>Profil</target>
             </trans-unit>
+            <trans-unit id="tl_content.cp_profile.1">
+                <target>Welches Profil soll ausgegeben werden?</target>
+            </trans-unit>
+            <trans-unit id="tl_content.cp_settingsLegend">
+                <source>Settings</source>
+                <target>Einstellungen</target>
+            </trans-unit>
             <trans-unit id="tl_content.cp_profileWithDescription.0">
                 <source>Profile with description</source>
-                <target>Profil mit Steckbrief</target>
+                <target>Profil mit Steckbrief ausgeben</target>
             </trans-unit>
         </body>
     </file>
