@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+    <file>
+        <body>
+            <trans-unit id="tl_content.cp_profileReader.0">
+                <source>Profile reader</source>
+                <target>Profilleser</target>
+            </trans-unit>
+            <trans-unit id="tl_content.cp_profile.0">
+                <source>Profile</source>
+                <target>Steckbrief</target>
+            </trans-unit>
+            <trans-unit id="tl_content.cp_profile_legend.0">
+                <source>Profile</source>
+                <target>Steckbrief</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
