@@ -1,7 +1,21 @@
 <?php $this->extend('block_searchable'); ?>
 
 <?php $this->block('content'); ?>
-<div class="profile">
-    <?= $this->profile->data[0]['first_name']; ?>
+<div class="profile" itemscope itemtype="http://schema.org/Person">
+    <figure class="profile__image">
+        <img src="janedoe.jpg" itemprop="image" alt="Photo of Jane Doe" />
+    </figure>
+    <div class="profile__data">
+        <div class="profile__name">
+            <span itemprop="name"><?= $this->profile->first_name . ' ' . $this->profile->last_name ?></span>
+        </div>
+        <div class="profile__department">
+            <span itemprop="jobTitle"><?= $this->profile->department ?></span>
+        </div>
+        <div class="profile__contact">
+            <span itemprop="telephone"><?= $this->profile->phone ?></span>
+            <a href="mailto:jane-doe@xyz.edu" itemprop="email"><?= $this->profile->email ?></a>
+        </div>
+    </div>
 </div>
 <?php $this->endblock(); ?>
