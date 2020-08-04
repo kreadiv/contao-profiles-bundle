@@ -2,6 +2,10 @@
 <xliff version="1.1">
     <file>
         <body>
+            <trans-unit id="FMD.cp_profileReader.0">
+                <source>Profile reader</source>
+                <target>Steckbrief leser</target>
+            </trans-unit>
             <trans-unit id="FMD.cp_profile.0">
                 <source>Profile</source>
                 <target>Steckbrief</target>

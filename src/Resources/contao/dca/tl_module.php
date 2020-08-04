@@ -3,7 +3,7 @@
 /**
  * Palettes
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['cp_profileReader'] = '{title_legend},name,type;{cp_profile_legend},cp_profile,cp_profile_slim;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['cp_profileReader'] = '{title_legend},name,type;{cp_profileLegend},cp_profile,cp_profile_slim;{expert_legend:hide},guests,cssID,space';
 
 /**
 * Fields
@@ -26,5 +26,5 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['cp_profile_slim'] = [
     'exclude'                     => true,
     'inputType'                   => 'checkbox',
     'eval'                        => ['includeBlankOption' => true, 'tl_class' => 'w50'],
-    'sql'                         => "INT unsigned NULL",
+    'sql'                         => "char(1) NOT NULL default ''",
 ];
