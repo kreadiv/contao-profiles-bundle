@@ -2,7 +2,7 @@
 
 namespace Kreadiv\ContaoProfilesBundle\Element;
 
-use Contao\Input;
+use Contao\ContentModel;
 
 class ProfileReaderElement extends \ContentElement
 {
@@ -19,13 +19,15 @@ class ProfileReaderElement extends \ContentElement
      *
      * @return string
      */
-    public function generate()
+    public function generate(ContentModel $model)
     {
         if (TL_MODE == 'BE') {
             $template = new \BackendTemplate('be_wildcard');
             $template->wildcard = '### ' . $GLOBALS['TL_LANG']['tl_content']['cp_profileReader'][0] . ' ###';
             return $template->parse();
         }
+
+        $this->profile = $model;
 
         return parent::generate();
     }
