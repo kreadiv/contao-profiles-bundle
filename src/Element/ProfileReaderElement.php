@@ -2,7 +2,7 @@
 
 namespace Kreadiv\ContaoProfilesBundle\Element;
 
-use Contao\ContentModel;
+use Contao\Database;
 
 class ProfileReaderElement extends \ContentElement
 {
@@ -12,31 +12,25 @@ class ProfileReaderElement extends \ContentElement
      */
     protected $strTemplate = 'ce_cp_profileReader';
 
-    protected $profile;
-
     /**
      * Displays a wildcard in the back end.
      *
      * @return string
      */
-    public function generate(ContentModel $model)
+    public function compile()
     {
         if (TL_MODE == 'BE') {
             $template = new \BackendTemplate('be_wildcard');
             $template->wildcard = '### ' . $GLOBALS['TL_LANG']['tl_content']['cp_profileReader'][0] . ' ###';
             return $template->parse();
+        } else {
+            if (!empty($this->cp_profile)) {
+                $db = Database::getInstance();
+                $result = $db->prepare("SELECT * FROM tl_cp_profiles WHERE tl_cp_profiles.id = ?")->execute($this->cp_profile);
+
+                $this->Template->profile = $result->next();
+                $this->Template->profileWithDescription = $this->cp_profileWithDescription;
+            }
         }
-
-        $this->profile = $model;
-
-        return parent::generate();
-    }
-
-    /**
-     * Generates the module.
-     */
-    protected function compile()
-    {
-        $this->Template->profile = $this->profile;
     }
 }
