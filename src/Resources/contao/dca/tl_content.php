@@ -15,6 +15,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['cp_profile'] = [
     'options_callback'            => function () {
         $objProfiles = \Database::getInstance()->prepare('SELECT id, first_name, last_name FROM tl_cp_profiles ORDER BY last_name');
 
+        dd($objProfiles);
         $profileOptions = [];
         foreach ($objProfiles->data as $profile) {
             $profileOptions[$profile['id']] = $profile['first_name'] . ' ' . $profile['last_name'];
