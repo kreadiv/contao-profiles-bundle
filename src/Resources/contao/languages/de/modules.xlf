@@ -2,7 +2,11 @@
 <xliff version="1.2">
     <file>
         <body>
-            <trans-unit id="MOD.cp_profiles">
+            <trans-unit id="MOD.cp_profile_legend">
+                <source>Profil</source>
+                <target>Steckbrief</target>
+            </trans-unit>
+            <trans-unit id="MOD.cp_profile">
                 <source>Profile</source>
                 <target>Steckbriefe</target>
             </trans-unit>

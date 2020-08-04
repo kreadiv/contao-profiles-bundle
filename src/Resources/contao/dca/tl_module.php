@@ -3,7 +3,7 @@
 /**
  * Palettes
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['cp_profileReader'] = '{title_legend},name,type;{profile_legend},cp_profile';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['cp_profileReader'] = '{title_legend},name,type;{cp_profile_legend},cp_profile';
 
 /**
 * Fields
