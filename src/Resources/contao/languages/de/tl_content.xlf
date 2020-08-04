@@ -8,11 +8,15 @@
             </trans-unit>
             <trans-unit id="tl_content.cp_profile.0">
                 <source>Profile</source>
-                <target>Steckbrief</target>
+                <target>Profile</target>
             </trans-unit>
-            <trans-unit id="tl_content.cp_profile_legend.0">
+            <trans-unit id="tl_content.cp_profileLegend.0">
                 <source>Profile</source>
-                <target>Steckbrief</target>
+                <target>Profil</target>
+            </trans-unit>
+            <trans-unit id="tl_content.cp_profileWithDescription.0">
+                <source>Profile with description</source>
+                <target>Profil mit Steckbrief</target>
             </trans-unit>
         </body>
     </file>

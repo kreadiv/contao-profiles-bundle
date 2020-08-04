@@ -4,7 +4,7 @@
         <body>
             <trans-unit id="MOD.cp_profiles">
                 <source>Profile</source>
-                <target>Steckbriefe</target>
+                <target>Profile</target>
             </trans-unit>
         </body>
     </file>
