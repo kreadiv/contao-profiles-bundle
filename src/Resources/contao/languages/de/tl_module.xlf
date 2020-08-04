@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+    <file>
+        <body>
+            <trans-unit id="FMD.cp_profile.0">
+                <source>Profile</source>
+                <target>Steckbrief</target>
+            </trans-unit>
+            <trans-unit id="FMD.cp_profile_legend.0">
+                <source>Profile</source>
+                <target>Steckbrief</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
