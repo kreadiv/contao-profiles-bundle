@@ -3,6 +3,7 @@
 namespace Kreadiv\ContaoProfilesBundle\Element;
 
 use Contao\Database;
+use Contao\FilesModel;
 
 class ProfileReaderElement extends \ContentElement
 {
@@ -24,13 +25,35 @@ class ProfileReaderElement extends \ContentElement
             $template->wildcard = '### ' . $GLOBALS['TL_LANG']['tl_content']['cp_profileReader'][0] . ' ###';
             return $template->parse();
         } else {
-            if (!empty($this->cp_profile)) {
-                $db = Database::getInstance();
-                $result = $db->prepare("SELECT * FROM tl_cp_profiles WHERE tl_cp_profiles.id = ?")->execute($this->cp_profile);
-
-                $this->Template->profile = $result->next();
-                $this->Template->profileWithDescription = $this->cp_profileWithDescription;
+            if ($this->cp_profile) {
+                $objProfile                                = $this->loadProfile($this->cp_profile);
+                $this->Template->objProfile                = $objProfile;
+                $this->Template->intProfileWithDescription = $this->cp_profileWithDescription;
+                $this->insertImage($objProfile);
             }
         }
+    }
+
+    /**
+     * Loads a profile
+     * @return \Database\Result|object
+     */
+    private function loadProfile($intId)
+    {
+        $objDb      = \Contao\Database::getInstance();
+        $strQuery   = "SELECT * FROM tl_cp_profiles WHERE tl_cp_profiles.id = $intId";
+        $objResult  = $objDb->execute($strQuery);
+        return $objResult;
+    }
+
+    /**
+     * Fügt ein Bild in das Template ein.
+     * @param $objProduct
+     */
+    private function insertImage($objProfile)
+    {
+        $arrData                = $objProfile->fetchAssoc();
+        $arrData['singleSRC']   = \Contao\FilesModel::findByUuid($arrData['profile_image'])->path;
+        $this->addImageToTemplate($this->Template, $arrData);
     }
 }

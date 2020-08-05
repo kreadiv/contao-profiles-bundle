@@ -3,9 +3,7 @@
 <?php $this->block('content'); ?>
 <div class="profile" itemscope itemtype="http://schema.org/Person">
     <figure class="profile__image">
-        <?php if ($image = $this->getImageObject($this->profile->profile_image, [null, null, null])) : ?>
-            <?php $this->insert('picture_default', $image->picture) ?>
-        <?php endif; ?>
+        <?php $this->insert('picture_default', $this->picture); ?>
     </figure>
     <div class="profile__data">
         <div class="profile__name">
