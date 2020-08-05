@@ -7,14 +7,14 @@
     </figure>
     <div class="profile__data">
         <div class="profile__name">
-            <span itemprop="name"><?= $this->profile->first_name . ' ' . $this->profile->last_name ?></span>
+            <span itemprop="name"><?= $this->objProfile->first_name . ' ' . $this->objProfile->last_name ?></span>
         </div>
         <div class="profile__department">
-            <span itemprop="jobTitle"><?= $this->profile->department ?></span>
+            <span itemprop="jobTitle"><?= $this->objProfile->department ?></span>
         </div>
         <div class="profile__contact">
-            Tel: <span itemprop="telephone"><?= $this->profile->phone ?></span><br>
-            E-Mail: <a href="mailto:<?= $this->profile->email ?>" itemprop="email"><?= $this->profile->email ?></a>
+            Tel: <span itemprop="telephone"><?= $this->objProfile->phone ?></span><br>
+            E-Mail: <a href="mailto:<?= $this->objProfile->email ?>" itemprop="email"><?= $this->profile->email ?></a>
         </div>
     </div>
 </div>
