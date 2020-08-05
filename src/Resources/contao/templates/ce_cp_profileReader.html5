@@ -14,7 +14,7 @@
         </div>
         <div class="profile__contact">
             Tel: <span itemprop="telephone"><?= $this->objProfile->phone ?></span><br>
-            E-Mail: <a href="mailto:<?= $this->objProfile->email ?>" itemprop="email"><?= $this->profile->email ?></a>
+            E-Mail: <a href="mailto:<?= $this->objProfile->email ?>" itemprop="email"><?= $this->objProfile->email ?></a>
         </div>
     </div>
 </div>
