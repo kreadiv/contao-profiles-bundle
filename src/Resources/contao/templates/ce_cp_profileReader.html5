@@ -3,7 +3,7 @@
 <?php $this->block('content'); ?>
 <div class="profile" itemscope itemtype="http://schema.org/Person">
     <figure class="profile__image">
-        <?php if ($image = $this->getImageObject($this->profile->profile_image, [null, null, null])): ?>
+        <?php if ($image = $this->getImageObject($this->profile->profile_image, [null, null, null])) : ?>
             <?php $this->insert('picture_default', $image->picture) ?>
         <?php endif; ?>
     </figure>
@@ -15,8 +15,8 @@
             <span itemprop="jobTitle"><?= $this->profile->department ?></span>
         </div>
         <div class="profile__contact">
-            <span itemprop="telephone"><?= $this->profile->phone ?></span>
-            <a href="mailto:jane-doe@xyz.edu" itemprop="email"><?= $this->profile->email ?></a>
+            Tel: <span itemprop="telephone"><?= $this->profile->phone ?></span><br>
+            E-Mail: <a href="mailto:<?= $this->profile->email ?>" itemprop="email"><?= $this->profile->email ?></a>
         </div>
     </div>
 </div>
