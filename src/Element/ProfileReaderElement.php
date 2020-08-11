@@ -54,6 +54,16 @@ class ProfileReaderElement extends \ContentElement
     {
         $arrData                = $objProfile->fetchAssoc();
         $arrData['singleSRC']   = \Contao\FilesModel::findByUuid($arrData['profile_image'])->path;
+
+        // Override the default image size
+        if ($this->imgSize != '') {
+            $size = StringUtil::deserialize($this->imgSize);
+
+            if ($size[0] > 0 || $size[1] > 0 || is_numeric($size[2]) || ($size[2][0] ?? null) === '_') {
+                $arrData['size'] = $this->imgSize;
+            }
+        }
+        
         $this->addImageToTemplate($this->Template, $arrData);
     }
 }
