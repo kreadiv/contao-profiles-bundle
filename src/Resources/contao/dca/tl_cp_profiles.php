@@ -49,7 +49,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
 
     // Palettes
     'palettes' => [
-        'default'                => '{profile_legend},last_name,first_name,department,profile_image,email,phone,profile'
+        'default'                => '{profile_legend},last_name,first_name,department,profile_image,profile_image_size,email,phone,profile'
     ],
 
     // Fields
@@ -108,6 +108,17 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
             'inputType'          => 'fileTree',
             'eval'               => ['mandatory' => false, 'tl_class' => 'flr clr', 'files' => true, 'fieldType' => 'radio', 'extensions' => \Contao\Config::get('validImageTypes')],
             'sql'                => "blob NULL"
+        ],
+        'profile_image_size' => [
+            'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['profile_image_size'],
+            'exclude'            => true,
+            'inputType'          => 'imageSize',
+            'reference'          => &$GLOBALS['TL_LANG']['MSC'],
+            'eval'               => ['rgxp' => 'natural', 'includeBlankOption' => true, 'nospace' => true, 'helpwizard' => true, 'tl_class' => 'w50'],
+            'options_callback' => static function () {
+                return Contao\System::getContainer()->get('contao.image.image_sizes')->getOptionsForUser(Contao\BackendUser::getInstance());
+            },
+            'sql'                => "varchar(64) NOT NULL default ''"
         ]
     ]
 ];
