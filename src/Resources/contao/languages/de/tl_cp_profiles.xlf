@@ -22,6 +22,11 @@
                 <target>Profilbild</target>
             </trans-unit>
 
+            <trans-unit id="tl_cp_profiles.profile_image_size.0">
+                <source>Image size</source>
+                <target>Bildgröße</target>
+            </trans-unit>
+
             <trans-unit id="tl_cp_profiles.email.0">
                 <source>E-Mail-Address</source>
                 <target>E-Mail-Adresse</target>
