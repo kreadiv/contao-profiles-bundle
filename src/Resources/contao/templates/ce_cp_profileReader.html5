@@ -2,9 +2,9 @@
 
 <?php $this->block('content'); ?>
 <div class="profile" itemscope itemtype="http://schema.org/Person">
-    <figure class="profile__image">
-        <?php $this->insert('picture_default', $this->picture); ?>
-    </figure>
+    <?php if ($this->addImage) : ?>
+        <?php $this->insert('image', $this->arrData); ?>
+    <?php endif; ?>
     <div class="profile__data">
         <div class="profile__name">
             <span itemprop="name"><?= $this->objProfile->first_name . ' ' . $this->objProfile->last_name ?></span>
