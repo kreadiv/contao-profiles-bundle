@@ -4,7 +4,7 @@ namespace Kreadiv\ContaoProfilesBundle\Model;
 
 use Contao\Model;
 
-class Profiles extends Model
+class CpProfilesModel extends Model
 {
 
     /**

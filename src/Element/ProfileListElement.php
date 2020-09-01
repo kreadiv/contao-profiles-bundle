@@ -3,6 +3,7 @@
 namespace Kreadiv\ContaoProfilesBundle\Element;
 
 use Contao\Database;
+use Kreadiv\ContaoProfilesBundle\Model\CpProfilesModel;
 
 class ProfileListElement extends \ContentElement
 {
@@ -24,21 +25,10 @@ class ProfileListElement extends \ContentElement
             $template->wildcard = '### ' . $GLOBALS['TL_LANG']['tl_content']['cp_profileList'][0] . ' ###';
             return $template->parse();
         } else {
-            $objProfiles                               = $this->loadProfiles();
+            $objProfiles                               = CpProfilesModel::getAll();
             $this->Template->objProfiles               = $objProfiles;
             $this->Template->intProfileWithDescription = $this->cp_profileWithDescription;
         }
     }
 
-    /**
-     * Loads all profiles
-     * @return \Database\Result|object
-     */
-    private function loadProfiles()
-    {
-        $objDb      = \Contao\Database::getInstance();
-        $strQuery   = "SELECT id, first_name, last_name FROM tl_cp_profiles ORDER BY last_name";
-        $objResult  = $objDb->execute($strQuery);
-        return $objResult;
-    }
 }
