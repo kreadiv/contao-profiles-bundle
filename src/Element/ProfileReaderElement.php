@@ -3,7 +3,6 @@
 namespace Kreadiv\ContaoProfilesBundle\Element;
 
 use Contao\Database;
-use Contao\FilesModel;
 
 class ProfileReaderElement extends \ContentElement
 {
