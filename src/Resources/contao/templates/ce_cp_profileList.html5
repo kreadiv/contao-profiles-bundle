@@ -1,0 +1,22 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+<div class="profiles">
+<?php foreach ($this->objProfiles as $objProfile): ?>
+    <div class="profile" itemscope itemtype="http://schema.org/Person">
+        <div class="profile__data">
+            <div class="profile__name">
+                <span itemprop="name"><?= $objProfile->first_name . ' ' . $objProfile->last_name ?></span>
+            </div>
+            <div class="profile__department">
+                <span itemprop="jobTitle"><?= $objProfile->department ?></span>
+            </div>
+            <div class="profile__contact">
+                Tel: <span itemprop="telephone"><?= $objProfile->phone ?></span><br>
+                E-Mail: <a href="mailto:<?= $objProfile->email ?>" itemprop="email"><?= $objProfile->email ?></a>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+</div>
+<?php $this->endblock(); ?>
