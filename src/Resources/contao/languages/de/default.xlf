@@ -11,6 +11,9 @@
             <trans-unit id="CTE.cp_profileList.0">
                 <target>Profilliste</target>
             </trans-unit>
+            <trans-unit id="MSC.cp_profile">
+                <target>Steckbrief</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

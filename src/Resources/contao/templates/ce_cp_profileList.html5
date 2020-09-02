@@ -23,6 +23,13 @@
                     E-Mail: <a href="mailto:<?= $objProfile->email ?>" itemprop="email"><?= $objProfile->email ?></a>
                 </div>
             </div>
+            <?php if ($objProfile->profile !== ''): ?>
+            <label for="profile" class="profile__profile-trigger"><?= $GLOBALS['TL_LANG']['MSC']['cp_profile'] ?></label>
+            <input type="checkbox" name="profile" class="profile__profile-subscriber">
+            <div class="profile__profile">
+                <?= $objProfile->profile ?>
+            </div>
+            <?php endif; ?>
         </div>
     <?php endforeach; ?>
 </div>
