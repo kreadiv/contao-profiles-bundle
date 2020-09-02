@@ -24,8 +24,8 @@
                 </div>
             </div>
             <?php if ($objProfile->profile !== '') : ?>
-                <label for="profile-id-<?php $objProfile->id ?>" class="profile__profile-trigger"><?= $GLOBALS['TL_LANG']['MSC']['cp_profile'] ?></label>
-                <input type="checkbox" name="profile" id="profile-id-<?php $objProfile->id ?>" class="profile__profile-subscriber">
+                <label for="profile-id-<?= $objProfile->id ?>" class="profile__profile-trigger"><?= $GLOBALS['TL_LANG']['MSC']['cp_profile'] ?></label>
+                <input type="checkbox" name="profile" id="profile-id-<?= $objProfile->id ?>" class="profile__profile-subscriber">
                 <div class="profile__profile">
                     <?= $objProfile->profile ?>
                 </div>
