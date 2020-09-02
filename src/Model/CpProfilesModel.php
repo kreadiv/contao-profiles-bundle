@@ -15,7 +15,7 @@ class CpProfilesModel extends Model
 
     public static function getAll()
     {
-        return static::findAll(['order' => 'last_name DESC']);
+        return static::findAll(['order' => 'last_name ASC']);
     }
 
 }
