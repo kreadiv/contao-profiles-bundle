@@ -49,7 +49,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
 
     // Palettes
     'palettes' => [
-        'default'                => '{profile_legend},last_name,first_name,department,profile_image,profile_image_size,email,phone,profile'
+        'default'                => '{profile_legend},last_name,first_name,department,profile_image,profile_image_size,email,phone,profile,sorting'
     ],
 
     // Fields
@@ -119,6 +119,13 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
                 return Contao\System::getContainer()->get('contao.image.image_sizes')->getOptionsForUser(Contao\BackendUser::getInstance());
             },
             'sql'                => "varchar(64) NOT NULL default ''"
-        ]
+        ],
+        'sorting' => [
+            'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['sorting'],
+            'exclude'            => true,
+            'inputType'          => 'text',
+            'eval'               => ['rgxp' => 'natural', 'maxlength' => 255, 'tl_class' => 'w50 clr'],
+            'sql'                => ['type' => 'integer', 'unsigned' => true, 'default' => 0]
+        ],
     ]
 ];
