@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+    <file>
+        <body>
+            <trans-unit id="CTE.cp">
+                <target>Contao-Profile</target>
+            </trans-unit>
+            <trans-unit id="CTE.cp_profileReader.0">
+                <target>Profile reader</target>
+            </trans-unit>
+            <trans-unit id="CTE.cp_profileList.0">
+                <target>Profile list</target>
+            </trans-unit>
+            <trans-unit id="MSC.cp_profile">
+                <target>Profile</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
