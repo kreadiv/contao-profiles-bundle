@@ -81,6 +81,13 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
             'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50 clr'],
             'sql'                => "varchar(255) NOT NULL default ''"
         ],
+        'department_english' => [
+            'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['department_english'],
+            'exclude'            => true,
+            'inputType'          => 'text',
+            'eval'               => ['mandatory' => true, 'maxlength' => 255, 'decodeEntities' => true, 'tl_class' => 'w50 clr'],
+            'sql'                => "varchar(255) NOT NULL default ''"
+        ],
         'email' => [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['email'],
             'exclude'            => true,

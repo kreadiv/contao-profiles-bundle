@@ -16,7 +16,11 @@
                     <span itemprop="name"><?= $objProfile->first_name . ' ' . $objProfile->last_name ?></span>
                 </div>
                 <div class="profile__department">
-                    <span itemprop="jobTitle"><?= $objProfile->department ?></span>
+                    <?php if ($GLOBALS['TL_LANGUAGE'] == 'de') : ?>
+                        <span itemprop="jobTitle"><?= $objProfile->department ?></span>
+                    <?php elseif ($GLOBALS['TL_LANGUAGE'] == 'en') : ?>
+                        <span itemprop="jobTitle"><?= $objProfile->department_english ?></span>
+                    <?php endif; ?>
                 </div>
                 <div class="profile__contact">
                     Tel: <span itemprop="telephone"><?= $objProfile->phone ?></span><br>

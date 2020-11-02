@@ -13,8 +13,13 @@
             </trans-unit>
 
             <trans-unit id="tl_cp_profiles.department.0">
-                <source>Department</source>
-                <target>Abteilung / Position</target>
+                <source>Department (German)</source>
+                <target>Abteilung / Position (Deutsch)</target>
+            </trans-unit>
+
+            <trans-unit id="tl_cp_profiles.department_english.0">
+                <source>Department (Englisch)</source>
+                <target>Abteilung / Position (Englisch)</target>
             </trans-unit>
 
             <trans-unit id="tl_cp_profiles.profile_image.0">
