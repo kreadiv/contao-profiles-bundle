@@ -49,7 +49,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
 
     // Palettes
     'palettes' => [
-        'default'                => '{profile_legend},last_name,first_name,department,department_english,profile_image,profile_image_size,email,phone,profile,sorting'
+        'default'                => '{profile_legend},last_name,first_name,department,department_english,profile_image,profile_image_size,email,phone,profile,profile_english,sorting'
     ],
 
     // Fields
@@ -104,6 +104,13 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
         ],
         'profile' => [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['profile'],
+            'exclude'            => true,
+            'inputType'          => 'textarea',
+            'eval'               => ['mandatory' => false, 'rte' => 'tinyMCE', 'decodeEntities' => true, 'tl_class' => 'clr', 'allowHtml' => true],
+            'sql'                => "text NULL"
+        ],
+        'profile_english' => [
+            'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['profile_english'],
             'exclude'            => true,
             'inputType'          => 'textarea',
             'eval'               => ['mandatory' => false, 'rte' => 'tinyMCE', 'decodeEntities' => true, 'tl_class' => 'clr', 'allowHtml' => true],

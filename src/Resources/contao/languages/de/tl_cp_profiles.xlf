@@ -43,8 +43,13 @@
             </trans-unit>
 
             <trans-unit id="tl_cp_profiles.profile.0">
-                <source>Profile</source>
-                <target>Steckbrief</target>
+                <source>Profile (German)</source>
+                <target>Steckbrief (Deutsch)</target>
+            </trans-unit>
+
+            <trans-unit id="tl_cp_profiles.profile_english.0">
+                <source>Profile (English)</source>
+                <target>Steckbrief (Englisch)</target>
             </trans-unit>
         </body>
     </file>

@@ -31,7 +31,11 @@
                 <label for="profile-id-<?= $objProfile->id ?>" class="profile__profile-trigger btn btn_secondary btn_arrowed"><?= $GLOBALS['TL_LANG']['MSC']['cp_profile'] ?></label>
                 <input type="checkbox" name="profile" id="profile-id-<?= $objProfile->id ?>" class="profile__profile-subscriber">
                 <div class="profile__profile">
-                    <?= $objProfile->profile ?>
+                    <?php if ($GLOBALS['TL_LANGUAGE'] == 'de') : ?>
+                        <?= $objProfile->profile ?>
+                    <?php elseif ($GLOBALS['TL_LANGUAGE'] == 'en') : ?>
+                        <?= $objProfile->profile_english ?>
+                    <?php endif; ?>
                 </div>
             <?php endif; ?>
         </div>
