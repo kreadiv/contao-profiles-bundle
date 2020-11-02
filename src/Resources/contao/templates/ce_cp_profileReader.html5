@@ -10,7 +10,11 @@
             <span itemprop="name"><?= $this->objProfile->first_name . ' ' . $this->objProfile->last_name ?></span>
         </div>
         <div class="profile__department">
-            <span itemprop="jobTitle"><?= $this->objProfile->department ?></span>
+            <?php if ($GLOBALS['TL_LANGUAGE'] == 'de') : ?>
+                <span itemprop="jobTitle"><?= $this->objProfile->department ?></span>
+            <?php elseif ($GLOBALS['TL_LANGUAGE'] == 'en') : ?>
+                <span itemprop="jobTitle"><?= $this->objProfile->department_english ?></span>
+            <?php endif; ?>
         </div>
         <div class="profile__contact">
             Tel: <span itemprop="telephone"><?= $this->objProfile->phone ?></span><br>
