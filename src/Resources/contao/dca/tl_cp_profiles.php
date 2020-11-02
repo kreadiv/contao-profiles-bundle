@@ -49,7 +49,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
 
     // Palettes
     'palettes' => [
-        'default'                => '{profile_legend},last_name,first_name,department,profile_image,profile_image_size,email,phone,profile,sorting'
+        'default'                => '{profile_legend},last_name,first_name,department,department_english,profile_image,profile_image_size,email,phone,profile,sorting'
     ],
 
     // Fields
