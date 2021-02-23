@@ -55,7 +55,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
     // Fields
     'fields' => [
         'id' => [
-            'sql'                => ['type' => 'integer', 'unsigned' => true, 'autoincrement' => true]            
+            'sql'                => ['type' => 'integer', 'unsigned' => true, 'autoincrement' => true]
         ],
         'tstamp' => [
             'sql'                => ['type' => 'integer', 'unsigned' => true, 'default' => 0]
@@ -138,8 +138,15 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
             'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['sorting'],
             'exclude'            => true,
             'inputType'          => 'text',
-            'eval'               => ['rgxp' => 'natural', 'maxlength' => 255, 'tl_class' => 'w50 clr'],
+            'eval'               => ['rgxp' => 'natural', 'maxlength' => 255, 'tl_class' => 'w50'],
             'sql'                => ['type' => 'integer', 'unsigned' => true, 'default' => 0]
+        ],
+        'hide_in_profile_list' => [
+            'label'              => &$GLOBALS['TL_LANG']['tl_cp_profiles']['hide_in_profile_list'],
+            'exclude'            => true,
+            'inputType'          => 'checkbox',
+            'eval'               => ['tl_class' => 'w50 clr'],
+            'sql'                => "char(1) NOT NULL default ''"
         ],
     ]
 ];

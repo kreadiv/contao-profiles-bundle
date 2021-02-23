@@ -28,6 +28,7 @@ class ProfileListElement extends \ContentElement
             $objProfiles                               = CpProfilesModel::getAll();
             $this->Template->objProfiles               = $objProfiles;
             $this->Template->intProfileWithDescription = $this->cp_profileWithDescription;
+            $this->Template->intProfileWithDescription = $this->cp_profileWithDescription;
         }
     }
 
