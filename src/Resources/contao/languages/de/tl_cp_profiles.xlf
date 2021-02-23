@@ -51,6 +51,16 @@
                 <source>Profile (English)</source>
                 <target>Steckbrief (Englisch)</target>
             </trans-unit>
+
+            <trans-unit id="tl_cp_profiles.sorting.0">
+                <source>Sorting</source>
+                <target>Sortierung</target>
+            </trans-unit>
+
+            <trans-unit id="tl_cp_profiles.hide_in_profile_list.0">
+                <source>Hide in profile list</source>
+                <target>In der Profilliste verstecken</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
