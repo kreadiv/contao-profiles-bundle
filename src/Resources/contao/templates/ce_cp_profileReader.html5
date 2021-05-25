@@ -2,7 +2,7 @@
 
 <?php $this->block('content'); ?>
 <div class="profile" itemscope itemtype="http://schema.org/Person">
-    <?php if ($this->addImage) : ?>
+    <?php if ( ! empty($this->arrData)) : ?>
         <?php $this->insert('image', $this->arrData); ?>
     <?php endif; ?>
     <div class="profile__data">
