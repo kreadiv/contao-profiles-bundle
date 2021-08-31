@@ -25,7 +25,7 @@
                     </div>
                     <div class="profile__contact">
                         Tel: <span itemprop="telephone"><?= $objProfile->phone ?></span><br>
-                        E-Mail: <a href="mailto:<?= $objProfile->email ?>" itemprop="email"><?= $objProfile->email ?></a>
+                        E-Mail: <a href="mailto:<?= $objProfile->email ?>" itemprop="email" onClick="ga('send', 'event', 'E-Mail', 'Klick', 'Profile list - <?= $this->objProfile->email ?>', 0);"><?= $objProfile->email ?></a>
                     </div>
                 </div>
                 <?php if ($objProfile->profile !== '') : ?>
