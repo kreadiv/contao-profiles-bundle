@@ -52,17 +52,20 @@ class ProfileReaderElement extends \ContentElement
     private function insertImage($objProfile)
     {
         $arrData                = $objProfile->fetchAssoc();
-        $arrData['singleSRC']   = \Contao\FilesModel::findByUuid($arrData['profile_image'])->path;
 
-        // Override the default image size
-        if ($arrData['profile_image_size'] != '') {
-            $size = \Contao\StringUtil::deserialize($arrData['profile_image_size']);
-
-            if ($size[0] > 0 || $size[1] > 0 || is_numeric($size[2]) || ($size[2][0] ?? null) === '_') {
-                $arrData['size'] = $arrData['profile_image_size'];
+        if ( ! empty($arrData['profile_image'])) {
+            $arrData['singleSRC']   = \Contao\FilesModel::findByUuid($arrData['profile_image'])->path;
+    
+            // Override the default image size
+            if ($arrData['profile_image_size'] != '') {
+                $size = \Contao\StringUtil::deserialize($arrData['profile_image_size']);
+    
+                if ($size[0] > 0 || $size[1] > 0 || is_numeric($size[2]) || ($size[2][0] ?? null) === '_') {
+                    $arrData['size'] = $arrData['profile_image_size'];
+                }
             }
+    
+            $this->addImageToTemplate($this->Template, $arrData);
         }
-
-        $this->addImageToTemplate($this->Template, $arrData);
     }
 }
