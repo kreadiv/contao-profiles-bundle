@@ -22,7 +22,7 @@
             <?php elseif ($GLOBALS['TL_LANGUAGE'] == 'en') : ?>
                 Phone: <span itemprop="telephone"><?= $this->objProfile->phone ?></span><br>
             <?php endif; ?>
-            E-Mail: <a href="mailto:<?= $this->objProfile->email ?>" itemprop="email" onClick="ga('send', 'event', 'E-Mail', 'Klick', 'Profile reader - <?= $this->objProfile->email ?>', 0);"><?= $this->objProfile->email ?></a>
+            E-Mail: <a href="mailto:{{email_url::<?= $this->objProfile->email ?>}}" itemprop="email" onClick="ga('send', 'event', 'E-Mail', 'Klick', 'Profile reader - {{email_url::<?= $this->objProfile->email ?>}}', 0);">{{email_url::<?= $this->objProfile->email ?>}}</a>
         </div>
     </div>
 </div>
