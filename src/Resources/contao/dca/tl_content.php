@@ -24,7 +24,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['cp_profile'] = [
 
         return $profileOptions;
     },
-    'options'                     => $GLOBALS['TL_LANG']['tl_content']['cp_profileOptions']['options'],
+    'options'                     => $GLOBALS['TL_LANG']['tl_content']['cp_profileOptions'],
     'eval'                        => ['includeBlankOption' => true, 'chosen' => true, 'tl_class' => 'w50'],
     'sql'                         => "varchar(255) NOT NULL default ''",
 ];
