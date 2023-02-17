@@ -23,7 +23,7 @@ $GLOBALS['TL_DCA']['tl_cp_profiles'] = [
         ],
         'label' => [
             'fields' => ['last_name', 'first_name'],
-            'format' => '%s %',
+            'format' => '%s %s',
             'showColumns' => true
         ],
         'operations' => [
