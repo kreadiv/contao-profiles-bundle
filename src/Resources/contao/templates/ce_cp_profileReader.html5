@@ -1,29 +1,31 @@
 <?php $this->extend('block_searchable'); ?>
 
 <?php $this->block('content'); ?>
-<div class="profile" itemscope itemtype="http://schema.org/Person">
-    <?php if ( ! empty($this->arrData)) : ?>
-        <?php $this->insert('image', $this->arrData); ?>
+    <?php if ($this->objProfile): ?>
+        <div class="profile" itemscope itemtype="http://schema.org/Person">
+            <?php if ( ! empty($this->arrData)) : ?>
+                <?php $this->insert('image', $this->arrData); ?>
+            <?php endif; ?>
+            <div class="profile__data">
+                <div class="profile__name">
+                    <span itemprop="name"><?= $this->objProfile->first_name . ' ' . $this->objProfile->last_name ?></span>
+                </div>
+                <div class="profile__department">
+                    <?php if ($GLOBALS['TL_LANGUAGE'] == 'de') : ?>
+                        <span itemprop="jobTitle"><?= $this->objProfile->department ?></span>
+                    <?php elseif ($GLOBALS['TL_LANGUAGE'] == 'en') : ?>
+                        <span itemprop="jobTitle"><?= $this->objProfile->department_english ?></span>
+                    <?php endif; ?>
+                </div>
+                <div class="profile__contact">
+                    <?php if ($GLOBALS['TL_LANGUAGE'] == 'de') : ?>
+                        Tel: <span itemprop="telephone"><?= $this->objProfile->phone ?></span><br>
+                    <?php elseif ($GLOBALS['TL_LANGUAGE'] == 'en') : ?>
+                        Phone: <span itemprop="telephone"><?= $this->objProfile->phone ?></span><br>
+                    <?php endif; ?>
+                    E-Mail: <a href="mailto:{{email_url::<?= $this->objProfile->email ?>}}" itemprop="email" onClick="ga('send', 'event', 'E-Mail', 'Klick', 'Profile reader - {{email_url::<?= $this->objProfile->email ?>}}', 0);">{{email_url::<?= $this->objProfile->email ?>}}</a>
+                </div>
+            </div>
+        </div>
     <?php endif; ?>
-    <div class="profile__data">
-        <div class="profile__name">
-            <span itemprop="name"><?= $this->objProfile->first_name . ' ' . $this->objProfile->last_name ?></span>
-        </div>
-        <div class="profile__department">
-            <?php if ($GLOBALS['TL_LANGUAGE'] == 'de') : ?>
-                <span itemprop="jobTitle"><?= $this->objProfile->department ?></span>
-            <?php elseif ($GLOBALS['TL_LANGUAGE'] == 'en') : ?>
-                <span itemprop="jobTitle"><?= $this->objProfile->department_english ?></span>
-            <?php endif; ?>
-        </div>
-        <div class="profile__contact">
-            <?php if ($GLOBALS['TL_LANGUAGE'] == 'de') : ?>
-                Tel: <span itemprop="telephone"><?= $this->objProfile->phone ?></span><br>
-            <?php elseif ($GLOBALS['TL_LANGUAGE'] == 'en') : ?>
-                Phone: <span itemprop="telephone"><?= $this->objProfile->phone ?></span><br>
-            <?php endif; ?>
-            E-Mail: <a href="mailto:{{email_url::<?= $this->objProfile->email ?>}}" itemprop="email" onClick="ga('send', 'event', 'E-Mail', 'Klick', 'Profile reader - {{email_url::<?= $this->objProfile->email ?>}}', 0);">{{email_url::<?= $this->objProfile->email ?>}}</a>
-        </div>
-    </div>
-</div>
 <?php $this->endblock(); ?>
